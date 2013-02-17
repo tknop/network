@@ -1,0 +1,17 @@
+/sbin/ifconfig eth0 192.168.1.10 netmask 255.255.255.252 \
+
+broadcast 192.168.1.11 up
+
+/sbin/ifconfig eth1 192.168.1.13 netmask 255.255.255.252 \
+
+broadcast 192.168.1.15 up
+
+/sbin/ifconfig lo0:1 10.0.0.1 netmask 255.255.255.255 \
+
+broadcast 10.0.0.1 up
+
+route del default
+
+/sbin/ifconfig lo 127.0.0.1 up
+
+/etc/init.d/zebra start
